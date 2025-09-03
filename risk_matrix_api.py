@@ -1,6 +1,6 @@
 # risk_matrix_api.py
 """
-风险矩阵 (Risk Matrix) API 模块
+风险矩阵 (Risk Matrix) API 模块(源于fastAPI v1.0.0)
 
 本模块负责处理所有与风险矩阵相关的业务逻辑与API接口。
 """
@@ -122,4 +122,5 @@ def get_matrix_visualization():
             risk_lvl = determine_risk_level(risk_val)
             row.append(MatrixCell(probability=prob_name, severity=sev_name, risk_value=risk_val, risk_level=risk_lvl))
         matrix.append(row)
+
     return MatrixVisualizationResponse(probability_axis=prob_axis, severity_axis=sev_axis, matrix_data=matrix)
